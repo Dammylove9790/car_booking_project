@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+// import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+
 
 // file import
 import SignupBtn from "../../Btn/SignupBtn/SignupBtn";
@@ -15,6 +17,9 @@ import { Places } from "../../../content/Places";
 import PaymentMethod from "../PaymentMethod/PaymentMethod";
 import Note from "./Note/Note";
 import DatePicker from "../DatePicker/DatePicker";
+import CustomerGoogleMap from "./CustomerGoogleMap";
+import { ChakraProvider, theme } from '@chakra-ui/react'
+
 
 function Booking() {
   const [isRoute, setIsRoute] = useState(false);
@@ -28,13 +33,16 @@ function Booking() {
           <div className="left__container">
             <div className="map">
               <div className="map__container">
-                <img src={images.Mapping} alt="" />
+                {/* <img src={images.Mapping} alt="" /> */}
+                <ChakraProvider theme={theme}>
+                  <CustomerGoogleMap />
+                </ChakraProvider>
               </div>
               {/* <div className="search__container flex">
                 <input type="text" />
                 <BsSearch />
               </div> */}
-              <div className="setRoute">
+              {/* <div className="setRoute">
                 <div className="routeIcon">
                   <div>
                     <IoLocationSharp />
@@ -49,7 +57,7 @@ function Booking() {
                   <input type="text" placeholder="Pick up location?" />
                   <input type="text" placeholder="Drop off location?" />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="center__container">

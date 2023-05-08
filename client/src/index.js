@@ -5,12 +5,14 @@ import App from './App';
 import './style/utils.scss'
 import { Provider } from 'react-redux';
 import { store } from './App/store';
+import RidePayment from './component/PassengerDB/Booking/RidePayment';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <RidePayment />
+    {/* <Provider store={store}>
       <App />
-    </Provider>
+    </Provider> */}
   </React.StrictMode>
 );
