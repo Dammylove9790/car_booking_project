@@ -2,6 +2,7 @@ import React from 'react';
 import { FlutterWaveButton, closePaymentModal } from 'flutterwave-react-v3';
 
 export default function RidePayment() {
+  console.log(process.env.FLUTTERWAVE_API_KEY);
    const config = {
     public_key: process.env.FLUTTERWAVE_API_KEY,
     tx_ref: Date.now(),
@@ -14,7 +15,7 @@ export default function RidePayment() {
       name: 'john doe',
     },
     customizations: {
-      title: 'My store',
+      title: 'My store ',
       description: 'Payment for items in cart',
       logo: 'https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg',
     },
